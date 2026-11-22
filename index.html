@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f7f9ff">
+<meta name="description" content="AllToolsHub — 50 free online tools for text, calculations, images, PDFs, developers, SEO, colors and everyday tasks.">
+<title>AllToolsHub — 50 Free Online Tools</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script defer src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/qrcode@1.5.4/build/qrcode.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+</head>
+<body>
+<div class="announcement">✦ Simple, useful tools. Free to use. No account required.</div>
+<header class="site-header">
+<a class="brand" href="#"><span class="brand-mark">A</span><span>AllTools<span class="brand-accent">Hub</span></span></a>
+<nav class="desktop-nav"><a href="#tools">Explore tools</a><a href="#categories">Categories</a><a href="#about">About</a></nav>
+<div class="header-actions"><button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode">☾</button><a class="header-cta" href="#tools">Explore tools ↗</a><button class="menu-btn" id="menuToggle" aria-label="Open menu">☰</button></div>
+</header>
+<main>
+<section class="hero"><div class="hero-content"><div class="eyebrow">✦ YOUR EVERYDAY DIGITAL TOOLKIT</div><h1>Get more done.<br><span class="gradient-text">Make it effortless.</span></h1><p class="hero-copy">A growing collection of handy online tools to calculate, convert, create and simplify your day — all in one place.</p>
+<div class="search-wrap"><span class="search-icon">⌕</span><input id="toolSearch" type="search" placeholder="What would you like to do today?" aria-label="Search tools"><kbd>Ctrl K</kbd></div>
+<div class="hero-meta"><span>✦ 50 handy tools</span><span>•</span><span>Browser-based processing</span><span>•</span><span>No sign-up</span></div></div>
+<div class="hero-art" aria-hidden="true"><div class="art-card"><small>ALLTOOLS WORKSPACE</small><strong>50<span>+</span></strong><div class="art-bar"></div><div class="art-pills"><i>Text</i><i>PDF</i><i>Image</i><i>Math</i></div></div><div class="float-tile tile-a">％</div><div class="float-tile tile-b">⌘</div><div class="float-tile tile-c">↔</div></div></section>
+<section class="trust-strip"><div><b>50</b><span>useful tools</span></div><div><b>10</b><span>tool categories</span></div><div><b>0</b><span>accounts needed</span></div><div><b>100%</b><span>browser-first processing</span></div></section>
+<section class="section" id="categories"><div class="section-heading"><div><div class="eyebrow">FIND YOUR WORKFLOW</div><h2>Everything you need, <span class="gradient-text">neatly organized.</span></h2></div><p>Jump into a category and find the right tool for the task.</p></div><div class="category-grid" id="categoryGrid"></div></section>
+<section class="section tools-section" id="tools"><div class="section-heading tools-heading"><div><div class="eyebrow">THE TOOLBOX</div><h2>Explore all tools</h2><p class="section-subtitle">Small helpers for big and little tasks.</p></div><div class="tool-count"><span id="visibleCount">50</span> tools available</div></div><div class="filter-row" id="filterRow"></div><div class="tool-grid" id="toolGrid"></div><div class="empty-state" id="emptyState" hidden><div>⌕</div><h3>No tools found</h3><p>Try another search term or category.</p><button class="secondary-btn" id="clearSearch">Clear search</button></div></section>
+<section class="privacy-band" id="about"><div class="privacy-icon">◈</div><div><div class="eyebrow">MADE TO BE SIMPLE</div><h2>Your tasks. Your browser. Your control.</h2><p>Tools process text, calculations and files locally in your browser. Your files are not uploaded to an AllToolsHub server.</p></div><a href="#tools" class="text-link">Find a tool ↗</a></section>
+<section class="section faq-section"><div class="section-heading"><div><div class="eyebrow">GOOD TO KNOW</div><h2>Frequently asked questions</h2></div></div><div class="faq-list">
+<details><summary>Are the tools free?</summary><p>Yes. All 50 tools in this project are free to use. No account or subscription is required.</p></details>
+<details><summary>Are my files uploaded?</summary><p>No. File operations are performed in your browser using client-side libraries. Your files are not sent to an AllToolsHub backend.</p></details>
+<details><summary>Do PDF and QR tools work?</summary><p>Yes. PDF and QR utilities use browser-side libraries loaded from public CDNs. An internet connection is needed to load those libraries the first time.</p></details>
+<details><summary>Can I use this website on my phone?</summary><p>Yes. The interface adapts to phones, tablets and desktop screens.</p></details>
+</div></section>
+</main>
+<footer class="footer"><div class="footer-bottom">© 2026 AllToolsHub</div></footer>
+<div class="modal-backdrop" id="toolModal" aria-hidden="true"><section class="tool-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+<div class="modal-head"><div><span class="modal-category" id="modalCategory"></span><h2 id="modalTitle">Tool name</h2></div><button class="close-btn" id="closeModal" aria-label="Close tool">×</button></div>
+<p class="modal-description" id="modalDescription"></p><form id="toolForm" class="tool-form"></form>
+<div class="result-wrap" id="resultWrap" hidden><div class="result-head"><b>Result</b><button id="copyResult" class="copy-btn" type="button">Copy result</button></div><pre id="toolResult"></pre></div>
+<p class="modal-note">Processed locally in your browser. Files are not uploaded.</p></section></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="app.js"></script>
+</body></html>
